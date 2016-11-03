@@ -1,0 +1,49 @@
+Part 1
+
+3.2
+
+1. In 3.2.1.jpg
+
+5. The keys should be inserted in an order that balances the time it will take to 'climb' the
+tree vs. the number of accesses. For instance, let's assume that ACBEDGFIH are listed in order
+of most frequently to be accessed, we'll end up with a tree that looks like this:
+			A
+			 \
+			  C
+			 /
+			B
+			 \
+			  E
+			 /
+			D
+			 \
+			  G
+			 /
+			F
+			 \
+			  I
+			 /
+			H
+
+Here, we have a formula of node comparisons that is A+2C+3B+4E+5D+6G+7F+8I+9H
+Even though we have our keys in order of most accessed to least accessed, the number of node access we have to use
+to get to our fifth term is double that of the following insertion
+				C
+			       / \
+			      /   \
+			     /     \
+                            /       \
+			   A         E
+			    \       / \
+			     B     D   G
+				      / \
+				     F   I
+					/
+				       H
+Here, we have a formula of node comparisons that is C+2A+2E+3B+3D+3G+4F+4I+5H
+So it really depends on the situation. If 'A' is accessed most but not by much, then having the first element inserted
+be the second most frequent may save us time in the long run if 'E' or 'D' are still accessed a lot but less than the other terms.
+In this instance, the number of extra node comparisons we're performing is directly perportional to the calls to A minus the calls to C.
+The number of accesses we're saving on 'E,' however, is proportional to the calls to E times 2. 'B' has remained the same, and we've saved
+calls proportional to 2D and 3G and 3F and 4I and 4H. So if A-C < 2E+2D+3G+3F+4I+4H, then we're saving time in the long run. 
+
