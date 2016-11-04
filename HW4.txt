@@ -47,3 +47,14 @@ In this instance, the number of extra node comparisons we're performing is direc
 The number of accesses we're saving on 'E,' however, is proportional to the calls to E times 2. 'B' has remained the same, and we've saved
 calls proportional to 2D and 3G and 3F and 4I and 4H. So if A-C < 2E+2D+3G+3F+4I+4H, then we're saving time in the long run. 
 
+15.
+a. E, D, A, Q
+b. E, Q
+c. E, Q, T, S, J
+d. E, Q, J
+e. E, Q, T, E, D
+f. E, D, Q, J, M
+
+Part 2 and 3 and Extra Credit: LukeHW4Part2and3.java contains the main method that produces the output for the file with the dmas as keys
+as well as the regions as keys. You can also choose to output them in PreOrder or InOrder. Deletion works, but from what I could tell was unnecessary.
+My BST class is called "LukeBinaryTree3.java" (I had a couple other versions I was working with, but they became much too convoluted). 
