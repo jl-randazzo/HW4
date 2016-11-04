@@ -351,6 +351,7 @@ public class LukeBinaryTree3 {
                 temp.parent.right = temp.right;
                 temp.right.parent = temp.parent;
                 temp.right.left = temp.left;
+                temp.left.parent = temp.right;
                 temp.parent.right = balance(temp.parent.right);
                 temp = temp.parent.right;
                 minDepth = minDepth + minLength(temp);
@@ -360,6 +361,7 @@ public class LukeBinaryTree3 {
                 temp.parent.left = temp.right;
                 temp.right.parent = temp.parent;
                 temp.right.left = temp.left;
+                temp.left.parent = temp.right;
                 temp.parent.left = balance(temp.parent.left);
                 temp = temp.parent.left;
                 minDepth = minDepth + minLength(temp);
@@ -371,6 +373,7 @@ public class LukeBinaryTree3 {
                 temp.parent.right = temp.left;
                 temp.left.parent = temp.parent;
                 temp.left.right = temp.right;
+                temp.right.parent = temp.left;
                 temp.parent.right = balance(temp.parent.right); balances++;
                 temp = temp.parent.right;
                 minDepth = minDepth + minLength(temp);
@@ -380,6 +383,7 @@ public class LukeBinaryTree3 {
                 temp.parent.left = temp.left;
                 temp.left.parent = temp.parent;
                 temp.left.right = temp.right;
+                temp.right.parent = temp.left;
                 temp.parent.left = balance(temp.parent.left); balances++;
                 temp = temp.parent.left;
                 minDepth = minDepth + minLength(temp);
