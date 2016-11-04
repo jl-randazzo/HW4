@@ -317,6 +317,8 @@ public class LukeBinaryTree3 {
      */
     public void delete(String key) {
         Node temp = get(key);
+        if(temp==null) return;
+        totalNodes--;
         int minDepth = getDepth(key);
         if (temp == null) return;
 
