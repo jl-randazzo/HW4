@@ -2,10 +2,15 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileWriter;
 
-/**
- * Created by jl_ra on 11/2/2016.
- */
+
+/*
+ * I Machined this so that you could read the dmas or the regions as the keys and then let you output in preorder or Inorder
+ * I just made it output to 'output.txt' no matter what. I only counted the first time my balance method was called in
+ * theBalancingMachine rather than every time it was called in recursion.
+* */
+
 public class LukeHW4Part2and3 {
+
     public static void main(String[] args) throws IOException {
         String fileName = "dma.txt";
         String outputFile = "output.txt";
@@ -40,10 +45,14 @@ public class LukeHW4Part2and3 {
             else System.out.println("-----Invalid entry-----\n\n");
         }
 
+        fw.write("\n\n--------------------------\n"+
+                " TOTAL CPU TIME: " + totalTime +
+                "\n TOTAL NODES: " + Part2and3.totalNodes +
+                "\n TOTAL REBALANCING OPERATIONS: " + Part2and3.balances +
+                "\n--------------------------\n\n");
         Part2and3.output(selector, fw);
         fw.close();
         System.out.println("Your output has been saved in the root folder as 'output.txt'");
-
 
     }
 }

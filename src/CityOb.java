@@ -1,14 +1,6 @@
 
-
-/**
- * Created by jl_ra on 9/27/2016
- */
-
-/*I'll just put some notes up here. The CityOb is simple: I just used a string for each line and then searched for the commas
- *and assigned the strings between to the values dma, city, state. I originally was trying to implement the comparator and override it
- * as a static method in this class, but I just wasn't able to quite figure it out. I'm going to need to work on that a bit more.
- * For the time being I just created another class called CityComparator.java that used the return values of the methods
- * below to compare two CityOb's. And obviously the toString method is what I used to write the final file.
+/* I mostly just pulled this from the Linked List mergesort assignment since we're using the same data.
+ * I made an adjustment so that the key would be defined based on a boolean I gather from user input
  */
 public class CityOb {
     public String dma, city, state, key;
