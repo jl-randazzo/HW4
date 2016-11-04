@@ -37,6 +37,13 @@ public class LukeHW4Part2and3 {
                             "\n TOTAL NODES: " + Part2and3.totalNodes +
                             "\n TOTAL REBALANCING OPERATIONS: " + Part2and3.balances +
                            "\n--------------------------");
+
+        /* I was using this to test my search method. Feel free to use what I have here if you like!
+        CityOb test = Part2and3.search("534");
+        if(test != null) System.out.println("Dma: " + test.dma + " Region: " + test.city + " State: " + test.state);
+        else System.out.println("DNE");
+        */
+        
         while(true){
             System.out.println("Please select the output algorithm you'd like to use\n1)Preorder\n2)Inorder");
             inp = kb.nextLine();

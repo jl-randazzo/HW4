@@ -39,6 +39,13 @@ public class LukeBinaryTree3 {
         scn.close();
     }
 
+    //can be used in a static context that doesn't have access to the Node.
+    public CityOb search(String key){
+        Node x = get(key);
+        if(x != null) return x.item;
+        else return null;
+    }
+
     //simple recursive size method.
     public int size(Node x){
         if(x==null)return 0;
@@ -214,12 +221,12 @@ public class LukeBinaryTree3 {
     }
 
 
-/*
- * Rotations were a bit harder to implement than expected for a left/right/parent implementation. The if statements are
- * there to protect against null pointer exceptions. Making x = null at the end is redundant, but it was helpful during
- * debugging because I was able to diagnose that my rotate methods were creating duplicates of nodes and trees that
- * ascended in multiple directions.
- */
+    /*
+     * Rotations were a bit harder to implement than expected for a left/right/parent implementation. The if statements are
+     * there to protect against null pointer exceptions. Making x = null at the end is redundant, but it was helpful during
+     * debugging because I was able to diagnose that my rotate methods were creating duplicates of nodes and trees that
+     * ascended in multiple directions.
+     */
     public Node rotateLeft(Node x){
         Node y = new Node (x.key, x.item, x.parent);
         y.right = x.right;
@@ -320,7 +327,6 @@ public class LukeBinaryTree3 {
         if(temp==null) return;
         totalNodes--;
         int minDepth = getDepth(key);
-        if (temp == null) return;
 
         if (temp.left == null) {
             if (temp.right == null) temp = null;
