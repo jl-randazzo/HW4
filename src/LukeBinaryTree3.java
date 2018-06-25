@@ -1,6 +1,6 @@
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 import java.io.FileWriter;
 
 public class LukeBinaryTree3 {
@@ -17,30 +17,17 @@ public class LukeBinaryTree3 {
     private class Node{
         Node left, right, parent;
         String key;
-        CityOb item; //this is the value
+        Comparable item; //this is the value
 
-        public Node(String key, CityOb item, Node parent){
+        public Node(String key, Comparable item, Node parent){
             this.key = key;
             this.item = item;
             this.parent = parent;
         }
     }
 
-    //simple stuff. What's called from the main program.
-    public void read(String fileName, boolean selector) throws IOException{
-        File file = new File(fileName);
-        Scanner scn = new Scanner(file);
-        CityOb temp;
-        scn.nextLine();
-        while(scn.hasNextLine()){
-            temp = new CityOb(scn.nextLine(), selector);
-            add(temp);
-        }
-        scn.close();
-    }
-
     //can be used in a static context that doesn't have access to the Node.
-    public CityOb search(String key){
+    public Comparable search(String key){
         Node x = get(key);
         if(x != null) return x.item;
         else return null;
@@ -80,7 +67,7 @@ public class LukeBinaryTree3 {
 
     //Part of the benefit of having a parent Node is that it made it pretty easy to have a non-recursive add method
     //Pretty straightforward, I think. Saves the depth and passes it as an argument to my balancing machine.
-    public void add(CityOb item){
+    public void add(Comparable item){
         totalNodes++;
 
         if(root==null){root = new Node(item.key, item, null); return;}
